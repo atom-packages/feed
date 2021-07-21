@@ -9,7 +9,7 @@ const fetch = MFH.defaults({
     cacheManager: '.cache'
 });
 
-const baseUrl = 'https://idleberg.github.io/atom-package-control-api';
+const baseUrl = 'https://package-control.github.io/feed';
 
 (async () => {
     const auth = createTokenAuth(process.env.GITHUB_TOKEN);
