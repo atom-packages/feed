@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "node ./src/build-feed.mjs"
+    "build": "node ./src/build.mjs"
   },
   "keywords": [],
   "author": "",
