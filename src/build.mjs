@@ -28,8 +28,8 @@ const baseUrl = 'https://package-control.github.io/feed';
         console.log('Output folder already exists');
     }
 
-    await fs.copyFiles('src/index.html', 'public/index.html');
-    await fs.copyFiles('src/favicon.svg', 'public/favicon.svg');
+    await fs.copyFile('src/index.html', 'public/index.html');
+    await fs.copyFile('src/favicon.svg', 'public/favicon.svg');
 
     const feedTypes = [
         {
