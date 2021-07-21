@@ -20,7 +20,7 @@ const baseUrl = 'https://idleberg.github.io/atom-package-control-api';
     });
 
     try {
-        await fs.mkdir('public/feed', {
+        await fs.mkdir('public', {
             recursive: true
         });
         console.log('Output folder created');
@@ -60,9 +60,9 @@ const baseUrl = 'https://idleberg.github.io/atom-package-control-api';
             updated: new Date(),
             generator: "atom-package-generator-api",
             feedLinks: {
-                rss: `${baseUrl}/feed/${feedType.slug}.rss`,
-                json: `${baseUrl}/feed/${feedType.slug}.json`,
-                atom: `${baseUrl}/feed/${feedType.slug}.atom`
+                rss: `${baseUrl}/${feedType.slug}.rss`,
+                json: `${baseUrl}/${feedType.slug}.json`,
+                atom: `${baseUrl}/${feedType.slug}.atom`
             }
         });
 
@@ -127,9 +127,9 @@ const baseUrl = 'https://idleberg.github.io/atom-package-control-api';
         .sort((a, b) => new Date(b['date']).getTime() - new Date(a['date']).getTime())
         .map(item => feed.addItem(item));
 
-        await fs.writeFile(`public/feed/${feedType.slug}.rss`, feed.rss2(feed));
-        await fs.writeFile(`public/feed/${feedType.slug}.json`, feed.json1(feed));
-        await fs.writeFile(`public/feed/${feedType.slug}.atom`, feed.atom1(feed));
+        await fs.writeFile(`public/${feedType.slug}.rss`, feed.rss2(feed));
+        await fs.writeFile(`public/${feedType.slug}.json`, feed.json1(feed));
+        await fs.writeFile(`public/${feedType.slug}.atom`, feed.atom1(feed));
     }));    
     
 })();
