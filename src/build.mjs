@@ -28,6 +28,9 @@ const baseUrl = 'https://idleberg.github.io/atom-package-control-api';
         console.log('Output folder already exists');
     }
 
+    await fs.copyFiles('src/index.html', 'public/index.html');
+    await fs.copyFiles('src/favicon.svg', 'public/favicon.svg');
+
     const feedTypes = [
         {
             name: 'Newest Packages',
@@ -52,7 +55,7 @@ const baseUrl = 'https://idleberg.github.io/atom-package-control-api';
         }
 
         const feed = new Feed({
-            title: `Package Control: ${feedType.name}`,
+            title: `Atom Package Control: ${feedType.name}`,
             id: `${baseUrl}`,
             link: `${baseUrl}`,
             language: "en",
