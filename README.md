@@ -1,6 +1,6 @@
 # feed
 
-## Releases
+Feeds for Atom packages
 
 Releases: [Atom][releases-atom] | [RSS][releases-rss] | [JSON][releases-json]
 
