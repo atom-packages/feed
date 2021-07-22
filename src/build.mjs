@@ -55,7 +55,7 @@ const baseUrl = 'https://atom-packages.github.io/feed';
         }
 
         const feed = new Feed({
-            title: `Atom Package Control: ${feedType.name}`,
+            title: `Atom Packages: ${feedType.name}`,
             id: `${baseUrl}`,
             link: `${baseUrl}`,
             language: "en",
