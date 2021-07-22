@@ -10,9 +10,9 @@ Feeds for Atom packages
 
 [Atom][updates-atom] | [RSS][updates-rss] | [JSON][updates-json]
 
-[releases-atom]: https://package-control.github.io/feed/releases.atom
-[releases-rss]: https://package-control.github.io/feed/releases.rss
-[releases-json]: https://package-control.github.io/feed/releases.json
-[updates-atom]: https://package-control.github.io/feed/updates.atom
-[updates-rss]: https://package-control.github.io/feed/updates.rss
-[updates-json]: https://package-control.github.io/feed/updates.json
+[releases-atom]: https://atom-packages.github.io/feed/releases.atom
+[releases-rss]: https://atom-packages.github.io/feed/releases.rss
+[releases-json]: https://atom-packages.github.io/feed/releases.json
+[updates-atom]: https://atom-packages.github.io/feed/updates.atom
+[updates-rss]: https://atom-packages.github.io/feed/updates.rss
+[updates-json]: https://atom-packages.github.io/feed/updates.json
