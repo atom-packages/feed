@@ -61,7 +61,7 @@ const baseUrl = 'https://atom-packages.github.io/feed';
             language: "en",
             favicon: `${baseUrl}/favicon.svg`,
             updated: new Date(),
-            generator: "atom-package-generator-api",
+            generator: "@atom-packages/feed",
             feedLinks: {
                 rss: `${baseUrl}/${feedType.slug}.rss`,
                 json: `${baseUrl}/${feedType.slug}.json`,

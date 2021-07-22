@@ -1,5 +1,5 @@
 {
-  "name": "@package-control/feed",
+  "name": "@atom-packages/feed",
   "version": "0.0.0",
   "private": true,
   "scripts": {
