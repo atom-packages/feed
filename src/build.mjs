@@ -1,13 +1,22 @@
+import { minify as htmlMinify } from 'html-minifier-terser';
 import { createTokenAuth }from '@octokit/auth-token';
 import { Feed } from 'feed';
 import { Octokit }from '@octokit/core';
 import { promises as fs } from 'fs';
+import { render } from 'ejs';
+import { resolve } from 'path';
 import gh from 'parse-github-url';
 import MFH from 'make-fetch-happen';
 
 const fetch = MFH.defaults({
     cacheManager: '.cache'
 });
+
+const htmlMinifyOptions = {
+    collapseWhitespace: true,
+    removeAttributeQuotes: true,
+    removeComments: true
+};
 
 const baseUrl = 'https://atom-packages.github.io/feed';
 
@@ -27,9 +36,6 @@ const baseUrl = 'https://atom-packages.github.io/feed';
     } catch(err) {
         console.log('Output folder already exists');
     }
-
-    await fs.copyFile('src/index.html', 'public/index.html');
-    await fs.copyFile('src/favicon.svg', 'public/favicon.svg');
 
     const feedTypes = [
         {
@@ -133,6 +139,19 @@ const baseUrl = 'https://atom-packages.github.io/feed';
         await fs.writeFile(`public/${feedType.slug}.rss`, feed.rss2(feed));
         await fs.writeFile(`public/${feedType.slug}.json`, feed.json1(feed));
         await fs.writeFile(`public/${feedType.slug}.atom`, feed.atom1(feed));
-    }));    
+    })); 
     
+    const html = await fs.readFile(resolve('./src/template.ejs'), { encoding: 'utf8' });
+    const htmlMinified = await htmlMinify(render(html, {
+        lastUpdated: new Date().toLocaleString('en-GB', { timeZone: 'UTC' })
+    }), htmlMinifyOptions);
+    
+    const favicon = await fs.readFile(resolve('./src/favicon.svg'), { encoding: 'utf8' });
+    const faviconMinified = await htmlMinify(favicon, {
+        ...htmlMinifyOptions,
+        removeAttributeQuotes: false
+    })
+
+    await fs.writeFile('public/favicon.svg', faviconMinified);
+    await fs.writeFile('public/index.html', htmlMinified);    
 })();
