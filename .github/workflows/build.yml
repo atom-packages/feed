@@ -58,4 +58,4 @@ jobs:
           message: 'Update last-updated'
           add: 'last-updated --force'
           author_name: autobot
-          author_email: noreply@idleberg.com
+          author_email: atom-packages@users.noreply.github.com
