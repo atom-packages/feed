@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Atom Packages: Newest Packages</title>
+        <link>https://atom-packages.github.io/feed</link>
+        <description>undefined</description>
+        <lastBuildDate>Fri, 22 Jul 2022 23:56:45 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>@atom-packages/feed</generator>
+        <language>en</language>
+        <atom:link href="https://atom-packages.github.io/feed/releases.rss" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[atom-ahk]]></title>
+            <link>https://atom.io/packages/atom-ahk</link>
+            <guid>https://atom.io/packages/atom-ahk</guid>
+            <pubDate>Fri, 22 Jul 2022 22:18:48 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

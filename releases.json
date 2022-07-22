@@ -1,0 +1,17 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Atom Packages: Newest Packages",
+    "home_page_url": "https://atom-packages.github.io/feed",
+    "feed_url": "https://atom-packages.github.io/feed/releases.json",
+    "items": [
+        {
+            "id": "https://atom.io/packages/atom-ahk",
+            "url": "https://atom.io/packages/atom-ahk",
+            "title": "atom-ahk",
+            "date_modified": "2022-07-22T22:18:48.000Z",
+            "author": {
+                "name": "raulcontrerasmiranda"
+            }
+        }
+    ]
+}
