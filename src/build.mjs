@@ -51,9 +51,9 @@ const baseUrl = 'https://atom-packages.github.io/feed';
     ];
 
     await Promise.all(feedTypes.map(async feedType => {
-        console.log(`Downloading https://atom.io/api/packages?page=1&sort=${feedType.sort}&direction=desc`);
+        console.log(`Downloading https://api.pulsar-edit.dev/api/packages?page=1&sort=${feedType.sort}&direction=desc`);
 
-        const response = await fetch(`https://atom.io/api/packages?page=1&sort=${feedType.sort}&direction=desc`);
+        const response = await fetch(`https://api.pulsar-edit.dev/api/packages?page=1&sort=${feedType.sort}&direction=desc`);
         const packages = await response.json();
 
         if (!packages?.length) {
