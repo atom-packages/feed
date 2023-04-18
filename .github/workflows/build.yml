@@ -42,13 +42,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - id: changed-files
-        uses: ahmadnassri/action-changed-files@v1
-
-      - name: Write last updated
-        if: steps.changed-files-specific.outputs.changed == 'true'
-        run: echo $(date --iso-8601=seconds) > last-updated
-
       - name: Deploy
         if: steps.changed-files-specific.outputs.changed == 'true'
         uses: peaceiris/actions-gh-pages@v3
@@ -57,11 +50,9 @@ jobs:
           publish_dir: ./public
           force_orphan: true
 
-      - name: Commit
-        if: steps.changed-files-specific.outputs.changed == 'true'
-        uses: EndBug/add-and-commit@v7
+      - name: Keep workflow alive
+        uses: gautamkrishnar/keepalive-workflow@v1
         with:
-          message: 'Update last-updated'
-          add: 'last-updated --force'
-          author_name: atom-packages-bot
-          author_email: atom-packages@users.noreply.github.com
+          commit_message: 'keep alive'
+          committer_username: 'GitHub Action'
+          committer_email: 'action@users.noreply.github.com'
